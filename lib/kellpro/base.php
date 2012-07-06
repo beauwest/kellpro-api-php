@@ -10,6 +10,7 @@ abstract class KellPro_Base
 		'odcr/offenses' => 'KellPro_ODCR_Offenses',
 		'odcr/people' => 'KellPro_ODCR_People',
 		'odcr/activities' => 'KellPro_ODCR_Activities',
+		'odcr/search' => 'KellPro_ODCR_Search',
 	);
 
 	public function __construct($url = null)
@@ -71,7 +72,7 @@ abstract class KellPro_Base
 	}
 
 
-	private static function convertReference($reference)
+	public static function convertReference($reference)
 	{
 		$class = new KellPro_Stub($reference);
 

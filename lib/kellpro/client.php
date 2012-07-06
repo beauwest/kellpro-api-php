@@ -18,6 +18,7 @@ class KellPro_Client
 	const PATH_ODCR_OFFENSES = '/odcr/offenses';
 	const PATH_ODCR_PEOPLE = '/odcr/people';
 	const PATH_ODCR_ACTIVITIES = '/odcr/activities';
+	const PATH_ODCR_SEARCH = '/odcr/search';
 
 	public function request($method, $url, $parameters = array())
 	{

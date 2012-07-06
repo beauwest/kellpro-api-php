@@ -10,6 +10,7 @@ require_once(dirname(__FILE__) . '/kellpro/exceptions.php');
 
 require_once(dirname(__FILE__) . '/kellpro/access.php');
 
+require_once(dirname(__FILE__) . '/kellpro/odcr/search.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/case.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/court.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/offenses.php');
