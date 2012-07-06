@@ -52,6 +52,30 @@ abstract class KellPro_Base
 		{
 			foreach($json as $key => $value)
 			{
+
+				if($key == 'references')
+				{
+
+					foreach($value as &$reference)
+					{
+						$reference = self::convertReference($reference);
+					}
+				}
+
+				if($key == 'results')
+				{
+					foreach($value as $row)
+					{
+						foreach($row as &$rowValue)
+						{
+							if(is_object($rowValue) && !empty($rowValue->reference))
+							{
+								$rowValue = self::convertReference($rowValue->reference);
+							}
+						}
+					}
+				}
+
 				if(is_object($value) && !empty($value->reference))
 				{
 					$value = self::convertReference($value->reference);
@@ -74,6 +98,7 @@ abstract class KellPro_Base
 
 	public static function convertReference($reference)
 	{
+
 		$class = new KellPro_Stub($reference);
 
 		return $class;
