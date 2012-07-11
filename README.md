@@ -2,7 +2,7 @@
 
 The KellPro API Client Library for PHP is an open source library designed to talk to the [KellPro API](http://api.kellpro.com).
 
-### Installation
+## Installation
 
 The easiest way to begin working with the library is to clone it using the following git command:
 
@@ -10,7 +10,7 @@ The easiest way to begin working with the library is to clone it using the follo
     
 You can also download the PHP files in the `lib/` directory and add them to your project directly.
 
-### Requirements
+## Requirements
 
 The Client Library depends on PHP 5.3.0 or higher, with the libcurl extention. Make sure to check your `phpinfo()` page and verify that curl is available in your copy of PHP.
 
