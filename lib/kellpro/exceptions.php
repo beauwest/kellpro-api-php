@@ -8,6 +8,10 @@ class KellPro_NotFoundError extends KellPro_Error
 {
 }
 
+class KellPro_MethodNotAllowedError extends KellPro_Error
+{
+}
+
 class KellPro_MissingParameters extends KellPro_Error
 {
 }
