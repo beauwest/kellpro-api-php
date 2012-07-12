@@ -54,6 +54,15 @@ class KellPro_Client
 		{
 			curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, $method);
 		}
+		elseif($method == self::POST)
+		{
+			curl_setopt($curlHandle, CURLOPT_POST, true);
+			curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $parameters);
+		}
+		elseif($method == self::DELETE)
+		{
+			curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, $method);
+		}
 
 		$response = curl_exec($curlHandle);
 

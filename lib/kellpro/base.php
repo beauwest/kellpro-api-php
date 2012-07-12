@@ -32,6 +32,24 @@ abstract class KellPro_Base
 		return KellPro_Base::_responseToObject($response->body, $client, $className);
 	}
 
+	public static function _post($url, $parameters = array())
+	{
+		$client = new KellPro_Client();
+		$response = $client->request(KellPro_Client::POST, $url, $parameters);
+		$response->assertValidResponse();
+
+		return true;
+	}
+
+	public static function _delete($url, $parameters = array())
+	{
+		$client = new KellPro_Client();
+		$response = $client->request(KellPro_Client::DELETE, $url, $parameters);
+		$response->assertValidResponse();
+
+		return true;
+	}
+
 	public function getUrl()
 	{
 		return $this->_url;
