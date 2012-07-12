@@ -2,9 +2,9 @@
 class KellPro_Access extends KellPro_Resource
 {
 	// Requests
-	public static function get()
+	public static function get($parameters = array())
 	{
-		return KellPro_Base::_get(self::url());
+		return KellPro_Base::_get(self::url(), $parameters);
 	}
 
 	protected static function url()
