@@ -9,6 +9,8 @@ class KellPro_ODCR_Offenses extends KellPro_Resource
 
 	protected static function url()
 	{
-		return KellPro_Client::PATH_ODCR_OFFENSES;
+		$url = 'odcr/offenses';
+		self::$classMap[$url] = __CLASS__;
+		return '/' . $url;
 	}
 }

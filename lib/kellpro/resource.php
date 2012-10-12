@@ -1,7 +1,6 @@
 <?php
 abstract class KellPro_Resource extends KellPro_Base
 {
-
 	protected $values = array();
 
 	public function __get($key)

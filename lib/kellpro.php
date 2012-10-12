@@ -16,3 +16,5 @@ require_once(dirname(__FILE__) . '/kellpro/odcr/court.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/offenses.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/people.php');
 require_once(dirname(__FILE__) . '/kellpro/odcr/activities.php');
+
+require_once(dirname(__FILE__) . '/kellpro/treasurer/mortgagelink.php');

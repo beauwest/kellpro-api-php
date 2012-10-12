@@ -10,6 +10,8 @@ class KellPro_ODCR_Search extends KellPro_Resource
 
 	protected static function url()
 	{
-		return KellPro_Client::PATH_ODCR_SEARCH;
+		$url = 'odcr/search';
+		self::$classMap[$url] = __CLASS__;
+		return '/' . $url;
 	}
 }

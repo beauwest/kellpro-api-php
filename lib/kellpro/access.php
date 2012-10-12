@@ -19,7 +19,9 @@ class KellPro_Access extends KellPro_Resource
 
 	protected static function url()
 	{
-		return KellPro_Client::PATH_ACCESS;
+		$url = 'access';
+		self::$classMap[$url] = __CLASS__;
+		return '/' . $url;
 	}
 
 	// Response

@@ -12,14 +12,6 @@ class KellPro_Client
 
 	const API_CLIENT_VERSION = '0.1';
 
-	const PATH_ACCESS = '/access';
-	const PATH_ODCR_CASE = '/odcr/case';
-	const PATH_ODCR_COURT = '/odcr/courts';
-	const PATH_ODCR_OFFENSES = '/odcr/offenses';
-	const PATH_ODCR_PEOPLE = '/odcr/people';
-	const PATH_ODCR_ACTIVITIES = '/odcr/activities';
-	const PATH_ODCR_SEARCH = '/odcr/search';
-
 	public function request($method, $url, $parameters = array())
 	{
 		if(stripos($url, 'http') === false)
@@ -27,10 +19,16 @@ class KellPro_Client
 			$url = self::$apiURL . $url;
 		}
 
-		if(!empty($parameters))
+		if(!empty($parameters) && $method != self::POST)
 		{
 			$url .= '?' . http_build_query($parameters);
 		}
+
+		$headers = array(
+			'Accept: application/json',
+			self::__userAgent(),
+			'Accept-Language: ' . $this->_acceptLanguage
+		);
 
 		$curlHandle = curl_init();
 		curl_setopt($curlHandle, CURLOPT_URL, $url);
@@ -42,16 +40,11 @@ class KellPro_Client
 		curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($curlHandle, CURLOPT_CONNECTTIMEOUT, 10);
 		curl_setopt($curlHandle, CURLOPT_TIMEOUT, 45);
-		curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array(
-			'Content-Type: application/json; charset=utf-8',
-			'Accept: application/json',
-			self::__userAgent(),
-			'Accept-Language: ' . $this->_acceptLanguage
-		));
 		curl_setopt($curlHandle, CURLOPT_USERPWD, self::$apiKey . ':xxx');
 
 		if($method == self::GET)
 		{
+			$headers[] = 'Content-Type: application/json; charset=utf-8';
 			curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, $method);
 		}
 		elseif($method == self::POST)
@@ -61,8 +54,10 @@ class KellPro_Client
 		}
 		elseif($method == self::DELETE)
 		{
+			$headers[] = 'Content-Type: application/json; charset=utf-8';
 			curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, $method);
 		}
+		curl_setopt($curlHandle, CURLOPT_HTTPHEADER, $headers);
 
 		$response = curl_exec($curlHandle);
 

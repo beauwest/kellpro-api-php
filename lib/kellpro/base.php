@@ -3,15 +3,7 @@ abstract class KellPro_Base
 {
 	public $_url;
 
-	private static $classMap = array(
-		'access' => 'KellPro_Access',
-		'odcr/case' => 'KellPro_ODCR_Case',
-		'odcr/courts' => 'KellPro_ODCR_Courts',
-		'odcr/offenses' => 'KellPro_ODCR_Offenses',
-		'odcr/people' => 'KellPro_ODCR_People',
-		'odcr/activities' => 'KellPro_ODCR_Activities',
-		'odcr/search' => 'KellPro_ODCR_Search',
-	);
+	public static $classMap = array();
 
 	public function __construct($url = null)
 	{

@@ -9,6 +9,8 @@ class KellPro_ODCR_Activities extends KellPro_Resource
 
 	protected static function url()
 	{
-		return KellPro_Client::PATH_ODCR_ACTIVITIES;
+		$url = 'odcr/activities';
+		self::$classMap[$url] = __CLASS__;
+		return '/' . $url;
 	}
 }

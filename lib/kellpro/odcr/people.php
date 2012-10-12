@@ -9,6 +9,8 @@ class KellPro_ODCR_People extends KellPro_Resource
 
 	protected static function url()
 	{
-		return KellPro_Client::PATH_ODCR_PEOPLE;
+		$url = 'odcr/people';
+		self::$classMap[$url] = __CLASS__;
+		return '/' . $url;
 	}
 }
