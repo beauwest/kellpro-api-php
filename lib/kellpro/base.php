@@ -96,7 +96,7 @@ abstract class KellPro_Base
 		}
 		else
 		{
-			$class->$nodeName = json_decode($json);
+			$class->$nodeName = $json;
 		}
 
 		// Unset any unneeded variables.

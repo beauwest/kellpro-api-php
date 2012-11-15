@@ -1,16 +1,11 @@
 <?php
+KellPro_Base::$classMap['odcr/courts'] = 'KellPro_ODCR_Courts';
+
 class KellPro_ODCR_Courts extends KellPro_Resource
 {
 	// Requests
 	public static function get($court)
 	{
-		return KellPro_Base::_get(self::url(), array('code' => $court));
-	}
-
-	protected static function url()
-	{
-		$url = 'odcr/courts';
-		self::$classMap[$url] = __CLASS__;
-		return '/' . $url;
+		return KellPro_Base::_get(self::url(__CLASS__), array('code' => $court));
 	}
 }

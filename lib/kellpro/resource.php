@@ -27,4 +27,17 @@ abstract class KellPro_Resource extends KellPro_Base
 		unset($this->values[$key]);
 	}
 
+	protected static function url($class)
+	{
+		$url = '';
+		foreach(KellPro_Base::$classMap AS $address => $className)
+		{
+			if($className == $class)
+			{
+				$url = $address;
+			}
+		}
+		return '/' . $url;
+	}
+
 }
