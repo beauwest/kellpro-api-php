@@ -19,6 +19,7 @@ require_once(dirname(__FILE__) . '/kellpro/odcr/activities.php');
 
 require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/counties.php');
 require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/imagepreview.php');
+require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/imageprint.php');
 require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/images.php');
 require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/instrument.php');
 require_once(dirname(__FILE__) . '/kellpro/okcountyrecords/instrumenttypes.php');
