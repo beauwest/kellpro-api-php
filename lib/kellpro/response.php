@@ -37,7 +37,7 @@ class KellPro_Response
 				throw new KellPro_MissingParameters('The required parameters were not specified');
 				break;
 			case 500:
-				throw new KellPro_ServerError('An error occurred in the KellPro API. Please report the bug to KellPro');
+				throw new KellPro_ServerError('An error occurred in the KellPro API. Please report the bug to KellPro - Full Response: ' . $this->body);
 				break;
 		}
 	}
